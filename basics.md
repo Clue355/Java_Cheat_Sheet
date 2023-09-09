@@ -35,8 +35,8 @@ When you declare a variable in the class level. The compiler assigns them defaul
 class Main {
   static int num; // default is 0
   public static void main(String[] args) {
-  num = 10;
-  System.out.println(num)
+    num = 10;
+    System.out.println(num)
   }
 }
 ```
@@ -51,15 +51,15 @@ Variable names can be named anything as long as they don't start with a number o
 ```Java
 class Main {
   public static void main(String[] args) {
-  int 0num; // wrong
-  int my age; // wrong
-
-  int $age; // This is ok
-  int _age; // This is ok
-
-  int myAge; // Recommended. camel casing is used here
-
-  int a; // This is ok
+    int 0num; // wrong
+    int my age; // wrong
+  
+    int $age; // This is ok
+    int _age; // This is ok
+  
+    int myAge; // Recommended. camel casing is used here
+  
+    int a; // This is ok
   }
 }
 ```
@@ -147,6 +147,8 @@ Ex output:
 ```
 
 Here are examples of operators in Java.
+Notes:
+- if you divide a double with an int or the opposite you get back a double decimal number
 
 ```Java
 class Main {
@@ -167,14 +169,110 @@ class Main {
     // division
     System.out.println(number1 / number2); // 2
 
-    // remainder
+    // remainder (modulo/modulus)
     System.out.println(number1 % number2); // 0
+  }
+
+  public static void operatorsContinued(String[] args) {
+    // other ways to add
+    int number = 12;
+    number = number + 5;
+    //or
+    number +=5
+    // you can use the shorthand way with other operators too
+    
   }
 }
 ```
 
-Ex output:
-```
-5
-```
+Here are examples of relational operators
 
+```Java
+class Main {
+  public static void main(String[] args) {
+    int number1 = 12;
+    int number2 = 15;
+
+    // is equal to
+    System.out.println(number1 == number2)
+
+    // is not equal to
+    System.out.println(number1 != number2)
+
+    // is greater than
+    System.out.println(number1 > number2)
+
+    // is less than
+    System.out.println(number1 < number2)
+
+    //is greater than or equal to
+    System.out.println(number1 >= number2)
+
+    // is less than or equal to
+    System.out.println(number1 <= number2)
+  }
+}
+```
+Some examples of combining operators and different operators
+```Java
+class Main {
+  public static void main(String[] args) {
+    int age = 25;
+    // the double && lets you combine multiple operators in a line
+    int oper = age >= 18 && age <= 40;
+    // if both operators result to true then true is returned
+    // if one is false then false is returned
+  
+    boolean isStudent = false;
+    boolean isLibraryMember = true;
+    // if one operation is true and the other is false you will get back true
+    System.out.println(isStudent || isLibrearyMember);
+    // both have to be false for this operation to return false
+  
+    // the not operator will return the opposite of what would be returned
+    // in this case we would have returned false, but instead we get true
+    System.out.println(!isStudent);
+  
+    int score = 0;
+    int turns = 10;
+    // the increment and decrement operators can increase or decrease by one
+    score++; // increment
+    turns--; // decrement
+    System.out.println(score); // 1
+    System.out.println(turns); // 9
+  
+    int number = 50;
+    System.out.println(number++);
+    // the result you get from this is 55
+    System.out.println(number); // calling the variable again will give you 56
+    // this is because we are incrementing after we call the value
+    // the same thing happens with the decrement operator
+    System.out.println(++number);
+    // this is how you would increment before calling the number
+    // works the same with decrement
+  }
+}
+```
+examples of strings
+```Java
+class Main {
+  public static void main(String[] args) {
+    char percentSign = '%'; // stores one character
+    String name = "something interesting"; // stores a string
+    // if we have two strings that are made this way and are compared we get true
+    // because these two values will have the same location in memory
+  
+    String name = new String("value here"); // another way to create a string
+    // comparing two string objects will give you false
+    // The values would have different memory locations
+  }
+}
+```
+examples of string methods
+```Java
+class Main {
+  public static void main(String[] args) {
+    
+  }
+}
+```
