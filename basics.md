@@ -265,10 +265,59 @@ class Main {
     String name = new String("value here"); // another way to create a string
     // comparing two string objects will give you false
     // The values would have different memory locations
+
+    String name = "carlos";
+    String music = "synthwave";
+    System.out.println("hello my name is " + name + ". I listen to " + music); // plus signs are one way to concatinate a string or strings
+    String formatedString = String.format("hello my name is %s. I listen to %m.", name, music);
+    // this is another way to concatinate strings where u specify a %s. %d for integer, %f for double, %c for character, and %b for boolean
+    // then put in order what value you want in that place in order at the end that is seperated with a comma
   }
 }
 ```
 examples of string methods
+```Java
+class Main {
+  public static void main(String[] args) {
+    String name = "carlos";
+    System.out.println(name.length());
+    // this method will return how many characters there are in a string including spaces
+
+    String name = "carlos";
+    System.out.println(name.isEmpty());
+    // this method checks if the string is empty or not and returns a boolean
+
+    String name = "carlos";
+    System.out.println(name.toUpperCase());
+    // this method changes all letters to upper case in a string
+
+    String name = "carlos";
+    System.out.println(name.toLowerCase());
+    // this method changes all letters to lower case
+    // this does not affect the original string. it remains the same
+
+    String name = new String("carlos");
+    String name2 = new String("carlos");
+    System.out.println(name == name2);
+    // this returns false because they are not the same objects
+
+    String name = new String("carlos");
+    String name2 = new String("carlos");
+    System.out.println(name.equals(name2));
+    // this returns true because we are comparing values only
+
+    String string = "the sky is blue";
+    System.out.println(string.replace("blue", "red"));
+    // this method replaces the word blue with red
+    // this does not replace the original string. it remains the same
+
+    String string = "the sky is blue";
+    System.out.println(string.contains("sky"));
+    // this methods checks if a certain set of characters are in a string
+  }
+}
+```
+
 ```Java
 class Main {
   public static void main(String[] args) {
