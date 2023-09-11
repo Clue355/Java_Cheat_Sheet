@@ -6,6 +6,10 @@ This example also demonstrates how to output messages to the terminal. The class
 class Main {
   public static void main(String[] args) {
     System.out.println("Hello world!");
+    System.out.print();
+    // just using print disregards a new line at the end
+    // so everything will be in one line
+    // adding a \n in the string will cause the cursor to go to a new line
   }
 }
 ```
@@ -103,7 +107,10 @@ class Main {
 
     // Non-primitive Types
     // characters
-    char copyWriteSymbol = '\u00A9'
+    char copyWriteSymbol = '\u00A9';
+
+    //String
+    String name = "your name";
   }
 }
 ```
@@ -272,6 +279,8 @@ class Main {
     String formatedString = String.format("hello my name is %s. I listen to %m.", name, music);
     // this is another way to concatinate strings where u specify a %s. %d for integer, %f for double, %c for character, and %b for boolean
     // then put in order what value you want in that place in order at the end that is seperated with a comma
+    System.out.printf("hello %s", name);
+    // this is a shorthand way to do string format
   }
 }
 ```
@@ -317,11 +326,65 @@ class Main {
   }
 }
 ```
+How to take input from a user examples
 
 ```Java
+import java.util.Scanner;
+
 class Main {
   public static void main(String[] args) {
+    // this requires an import
+    Scanner scanner = new Scanner(System.in);
+
+    System.out.println("what is your name?");
+    String name = scanner.nextLine();
+    int age = scanner.nextInt();
+    System.out.println(name, age);
+    // before you can continue taking inputs you have to clear the buffer
+    // using scanner.nextLine(); otherwise the next input might be skipped
+    // this is caused by using an Int or Float. to avoid this use String and if needed
+    // convert to int or use the parseInt method like
+    // int age = Integer.parseInt(scanner.nextLine());
+    // int age = Double.parseDouble(scanner.nextLine());
+    scanner.nextLine();
+
+    String name2 = scanner.nextLine();
+    System.out.printf("hello %s", name2);
+    scanner.close();
+
+    // scanner methods
+    scanner.nextLine();
+    scanner.nextInt();
+    scanner.nextDouble();
+  }
+}
+```
+examples of conditionals
+```Java
+import java.util.Scanner;
+
+class Main {
+  public static void main(String[] args) {
+    Scanner scanner = new Scanner(System.in);
     
+    System.out.printf("enter first nubmer: ");
+    int number1 = scanner.nextDouble();
+    System.out.printf("enter second nubmer: ");
+    int number2 = scanner.nextDouble();
+    scanner.nextLine();
+
+    System.out.printf("What operation do you want to perform");
+    String oper = scanner.nextLine();
+
+    if (oper.equals("sum")) {
+      System.out.printf("%f + %f = %f", number1, number2, number1 + number2);
+    } else if (oper.equals("sub")) {
+      System.out.printf("%f - %f = %f", number1, number2, number1 - number2);
+    } else {
+      System.out.printf("%s is not a supported operation", oper);
+    }
+  
+    scanner.close();
   }
 }
 ```
