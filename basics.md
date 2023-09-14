@@ -359,6 +359,7 @@ class Main {
   }
 }
 ```
+
 examples of conditionals
 ```Java
 import java.util.Scanner;
@@ -385,6 +386,91 @@ class Main {
     }
   
     scanner.close();
+  }
+}
+```
+
+examples of switch
+
+```Java
+import java.util.Scanner;
+
+class Main {
+  public static void main(String[] args) {
+    Scanner scanner = new Scanner(System.in);
+
+    System.out.println("enter a random number between 1 and 3");
+    int oper = Integer.parseInt(scanner.nextLine());
+
+    switch (oper) {
+      case "1":
+        System.out.println("you chose 1");
+        break;
+      case "2":
+        System.out.println("you chose 2");
+        break;
+      case "3":
+        System.out.println("you chose 3");
+        break;
+      default:
+        System.out.println("default");
+    }
+  }
+}
+```
+
+Array examples
+```Java
+import java.utils.Arrays;
+
+class Main {
+  public static void main(String[] args) {
+    char vowels[] = new char[5];
+    // array of single character strings
+    // the 5 specifies the amount of maximum strings in the array
+
+    vowels[0] = 'a';
+    vowels[1] = 'e';
+    vowels[2] = 'i';
+    vowels[3] = 'o';
+    vowels[4] = 'u';
+    // to insert into the array you specify the name of the array and index of the value
+
+    System.out.println(vowels[2]);
+    // you can print out a specific index by specifying the name of the array and index
+
+    System.out.println(Arrays.toString(vowels));
+    // in order to print out the whole array you have to import java.utils.Arrays
+    // then use the code above to print
+
+    char vowels[] = {'a', 'e', 'i', 'o', 'u'}
+    // this is the short hand way of declaring an array
+
+    vowels[2] = 'x';
+    // in order to replace a value just specify array name and index with the value
+
+    System.out.println(vowels.length);
+    // print out the length of the array
+
+    Arrays.sort(vowels);
+    // you can use the sort method from Arrays to sort the array
+
+    Arrays.sort(vowels, startingIndex, endingIndex);
+    // you can specify which set of values you want to sort within an array
+
+    Arrays.binarySearch(vowels, key);
+    // only works on sorted arrays. This method can search for the key in an array
+
+    int foundItem = Arrays.binarySearch(vowels, key);
+    // the binary search in this example returns the index of the key
+  }
+}
+```
+
+```Java
+class Main {
+  public static void main(String[] args) {
+    
   }
 }
 ```
