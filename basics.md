@@ -99,7 +99,7 @@ class Main {
     // decimal types
     double double = 1.79769313; // 4.9E-324 to 1.7976931348623157E308
     float float = 3.4028F; // 1.4E-45 to 3.4028235E28
-    // you can also use a small F instead of capitol
+    // you can also use a small F instead of capital
 
     // booleans
     boolean isWeekend = false;
@@ -463,6 +463,18 @@ class Main {
 
     int foundItem = Arrays.binarySearch(vowels, key);
     // the binary search in this example returns the index of the key
+    // or
+    int startingIndex = 1;
+    int endingIndex = 4;
+    int foundItem = Arrays.binarySearch(vowels, startingIndex, EndingIndex, key);
+
+    Arrays.fill(vowels, 'x');
+    // fills an array with x's
+    // or
+    Arrays.fill(vowels, startingIndex, endingIndex, 'x');
+
+    int number[] = {1,2,3};
+    
   }
 }
 ```
