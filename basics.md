@@ -472,8 +472,10 @@ class Main {
     // fills an array with x's
     // or
     Arrays.fill(vowels, startingIndex, endingIndex, 'x');
+    // this fills a certain range with x's
 
     int number[] = {1,2,3};
+    
     
   }
 }
