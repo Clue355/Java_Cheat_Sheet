@@ -522,7 +522,23 @@ class Main {
     }
     // this prints out all the values in numbers starting from 2 since index starts at 1
 
-    
+    int numbers[] = {1,2,3,4,5};
+
+    int sum = 0
+
+    for(int index = 1; index < numbers.length; index++) {
+      sum += numbers[index]
+      System.out.println(numbers[index]);
+    }
+    System.out.println(sum);
+    // adds all the numbers together and prints the result
+
+    int number = 5
+
+    for(int multi = 1; multi < 10; multi++) {
+      System.out.printf("%d X %d = %d", number, multi, number * multi);
+    }
+    // this will print out the number times multi in 9 lines since it stops before 10
   }
 }
 ```
