@@ -474,8 +474,54 @@ class Main {
     Arrays.fill(vowels, startingIndex, endingIndex, 'x');
     // this fills a certain range with x's
 
-    int number[] = {1,2,3};
+    int numbers[] = {1,2,3};
+
+    int copyOfNumbers[] = numbers;
+    // makes a copy of numbers that is a reference to the first array
+    // if the numbers array is edited then the copy is also edited
+
+    System.out.println(copyOfNumbers == numbers);
+    // this would return true since it's comparing values
+    // however if using the copyOf method the values would have different memory locations
+    // so it would return false in that case
+      
+    int copyOfNumbers[] = Array.copyOf(numbers, number.length);
+    // makes a copy of numbers but in a different memory location
+    // if the original is edited this will not be edited
+
+    int copyOfNumbers[] = Array.copyOf(numbers, 2);
+    // specifiying a different lenght can limit what gets copied
+    // adding more than the length of the array will add zeros at the end
+    // the default value of an integer is 0
+
+    int copyOfNumbers[] = Array.copyOfRange(numbers, startingIndex, endingIndex);
+    // the starting and ending index can be specified if there's a specific set of values you want to copy
+
+    System.out.println(Arrays.equals(copyOfNumbers == numbers));
+    // this would return true as it's only comparing values using the
+    // Array.equals() method
     
+  }
+}
+```
+
+examples of for loops
+
+```Java
+class Main {
+  public static void main(String[] args) {
+    for(int number = 1; number <= 10; number++) {
+      System.out.println(number);
+    }
+    // standard format for a for loop
+
+    int numbers[] = {1,2,3,4,5};
+
+    for(int index = 1; index < numbers.length; index++) {
+      System.out.println(numbers[index]);
+    }
+    // this prints out all the values in numbers starting from 2 since index starts at 1
+
     
   }
 }
