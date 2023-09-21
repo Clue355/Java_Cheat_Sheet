@@ -570,7 +570,34 @@ examples of while loops
 ```Java
 class Main {
   public static void main(String[] args) {
-    
+    int number = 5;
+    int multi = 1;
+
+    while (multi <= 10) {
+      System.out.printf("%d X %d = %d \n", number, multi, number * multi);
+      multi++;
+    // this is the format for a while loop
+
+    int number = 5;
+    int multi = 1;
+
+    do {
+      System.out.printf("%d X %d = %d \n", number, multi, number * multi);
+      multi++;
+    } while (multi <= 10) 
+    // format for a do while loop
+
+  }
+}
+```
+examples of an array list
+
+```Java
+import java.util.ArrayList;
+
+class Main {
+  public static void main(String[] args) {
+    ArrayList<Integer> number = new ArrayList<Integer>();
   }
 }
 ```
