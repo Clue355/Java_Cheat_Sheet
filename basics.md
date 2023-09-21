@@ -539,6 +539,38 @@ class Main {
       System.out.printf("%d X %d = %d", number, multi, number * multi);
     }
     // this will print out the number times multi in 9 lines since it stops before 10
+
+    for(int number = 1; number <= 10; number++) {
+      for(int multi = 1; multi <= 10; multi++) {
+        System.out.printf("%d X %d = %d", number, multi, number * multi);
+      }
+    }
+    // you'll want to avoid nesting loops, but this will print out numbers 1-10 multiplied by the multi number
+
+    for(int number = 1; number <= 50; number++) {
+      if(number % 2== 1) {
+        System.out.println(number);
+      }
+    }
+    // prints out all odd numbers from 1 to 50
+
+    int numbers[] = {1,2,3};
+
+    for(int numbers : number) {
+      System.out.println(number);
+    }
+    // shorthand for loop through an array
+
+  }
+}
+```
+
+examples of while loops
+
+```Java
+class Main {
+  public static void main(String[] args) {
+    
   }
 }
 ```
