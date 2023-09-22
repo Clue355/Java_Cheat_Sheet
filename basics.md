@@ -594,6 +594,7 @@ examples of an array list
 
 ```Java
 import java.util.ArrayList;
+import java.util.Comparator;
 
 class Main {
   public static void main(String[] args) {
@@ -629,10 +630,42 @@ class Main {
     numbers.clear();
     // empties the array list
 
-    numbers.set(index, value);
+    numbers.set(index, Integer.valueOf(30));
     // this method allows you to change update a value inside an array list
     // it takes an index and value you will replace the current value with
+    // since the array is a reference type then the value will need to be too
 
+    numbers.sort(Comparator.naturalOrder());
+    // sorts the array list
+    // the comparator makes the list sort in sequential order
+
+    numbers.sort(Comparator.reverseOrder());
+    // reverses the list
+
+    System.out.println(numbers.size());
+    // returns size of array
+
+    System.out.println(numbers.contains(Integer.valueOf(1)));
+    // checks if the array has a certain value and returns true or false
+
+    System.out.println(numbers.isEmpty());
+    // checks if the array contains any values returns false if there's values or true if there's not
+
+    numbers.forEach(number -> {
+      numbers.set(numbers.indexOf(number), Integer.valueOf(30));
+      // indexOf can be used to find the index of a certain value within an array list
+      System.out.println(number);
+    });
+    // loops through the array and uses an arrow function to do something with each number
+  }
+}
+```
+
+examples of hashmaps
+
+```Java
+class Main {
+  public static void main(String[] args) {
     
   }
 }
