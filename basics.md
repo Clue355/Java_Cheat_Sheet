@@ -597,7 +597,43 @@ import java.util.ArrayList;
 
 class Main {
   public static void main(String[] args) {
-    ArrayList<Integer> number = new ArrayList<Integer>();
+    // Integer Double Float Boolean
+    // these are wrapper classes make objects reference types
+    // primitive types are like literal values that your giving
+    // while reference types reference a value that exists as maybe a variable or something else
+    // any data type can exist in array lists
+    ArrayList<Integer> numbers = new ArrayList<Integer>();
+    // you have to use wrapper classes for Array Lists
+
+    numbers.add(1);
+    numbers.add(2);
+    numbers.add(3);
+    // you have to use the add method to insert into array lists
+
+    System.out.println(numbers.toString());
+    // change it to a string to print
+    // Ex. output
+    // [1, 2, 3]
+    //  0  1  2  index
+
+    System.out.println(numbers.get(1));
+    // the get method prints the value of the index of 1 in numbers
+    // which will be 2 since that's the value of index 1
+
+    numbers.remove(index);
+    // this takes a value out of the array list
+
+    numbers.remove(Integer.valueOf(4));
+    // this will remove the value instead of what the index value is
+
+    numbers.clear();
+    // empties the array list
+
+    numbers.set(index, value);
+    // this method allows you to change update a value inside an array list
+    // it takes an index and value you will replace the current value with
+
+    
   }
 }
 ```
