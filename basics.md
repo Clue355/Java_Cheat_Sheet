@@ -9,7 +9,7 @@ class Main {
     System.out.print();
     // just using print disregards a new line at the end
     // so everything will be in one line
-    // adding a \n in the string will cause the cursor to go to a new line
+    // adding a \n in the string will add a new line
   }
 }
 ```
