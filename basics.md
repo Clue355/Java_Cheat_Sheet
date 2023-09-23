@@ -668,15 +668,56 @@ import java.util.HashMap;
 
 class Main {
   public static void main(String[] args) {
-    
+    HashMap<String, Integer> examScores = new HashMap<String, Integer>();
+    // first declare HashMap and define the data type of the key and value
+
+    examScores.put("Math", 75);
+    examScores.put("English", 85);
+    examScores.put("History", 95);
+
+    System.out.println(examScores.toString());
+    // this will print out the hashmap in random order and not the order you put the values in
+
+    System.out.println(examScores.get("Math"));
+    // this is getting the value for math using the Math key
+
+    examScores.putIfAbsent("Programming", 100);
+    // this will insert a new value in the hashmap if it doesn't exist
+    // if the key does then nothing will be changed
+
+    examScores.replace("Math", 100);
+    // this method will replace the key and value of an existing one inside the hashmap
+
+    System.out.println(examScores.getOrDefault("Programming", 0));
+    // this method will return the value of the key or it will return the second argument if it doesn't exist
+
+    examScores.clear();
+    // empties the hashmap
+
+    System.out.println(examScores.size());
+    // prints the length of the hashmap
+
+    examScores.remove();
+    // removes a key value pair from the hashmap
+
+    System.out.println(examScores.containsKey("Math"));
+    // checks if the hashmap contains the key and returns true or false
+
+    System.out.println(examScores.containsValue(75));
+    // checks if the hashmap contains this certain value and returns true or false
+    // you can also use Integer.valueOf(75) and it will work
+
+    System.out.println(examScores.isEmpty());
+    // checks if the hashmap is empty and returns true or false
+
+    examScores.forEach((key, value) -> {
+      System.out.println();
+      examScores.replace(key, value - 10);
+    });
+    // loops through the hashmap
+    // make sure to enclose more than one variable in parentheses ()
   }
 }
 ```
 
-```Java
-class Main {
-  public static void main(String[] args) {
-    
-  }
-}
-```
+## The end of basics!!
