@@ -15,11 +15,15 @@ class Main {
     // olderUser.name = "Johnathan Wick";
     // olderUser.birthday = LocalDate.parse("1964-09-02");
 
-    Book book = new Book("Harry Potter", "J.K. Rowling");
+    Book harryPotter = new Book("Harry Potter", "J.K. Rowling", 223);
     // book.title = "Harry Potter";
     // book.author = "J.K. Rowling";
 
-    youngerUser.borrow(book);
+    AudioBook dracula = new AudioBook("Dracula", "Bram Stoker", 30000);
+
+    Ebook jeeves = new Ebook("Carry On Jeeves", "P.G. Wodehouse", 280, "PDF");
+
+    youngerUser.borrow(harryPotter);
 
     // System.out.printf("%s was born in %s. His age is %d years old", youngerUser.name, youngerUser.birthday.toString(), youngerUser.age());
     System.out.printf("%s was born in %s. His age is %d years old", youngerUser.getName(), youngerUser.getBirthday(), youngerUser.age()); // values will be retrieved using the new methods
@@ -32,6 +36,13 @@ class Main {
     // System.out.printf("%s has borrowed these books: %s", youngerUser.name, youngerUser.books.toString());
     System.out.printf("%s has borrowed these books: %s", youngerUser.name, youngerUser.borrowedBooks());
     // example output: Carlos has borrowed these books: [Harry Potter by J.K. Rowling]
+
+    System.out.println(dracula.toString());
+    // example output: Dracula by Bram Stoker
+    // AudioBook is inheriting the toString method from Book
+
+    System.out.println(jeeves.toString());
+    // example output: Carry On Jeeves by P.G. Wodehouse
   }
 
 }
@@ -74,10 +85,12 @@ public class User {
 public class Book {
   private String title;
   private String author;
+  private int pageCount;
 
-  Book(String title, String author) {
+  Book(String title, String author, int pageCount) {
     this.title = title;
     this.author = author;
+    this.pageCount = pageCount;
   }
 
   public String getTitle() {
@@ -92,4 +105,22 @@ public class Book {
     return String.format("%s by %s", this.title, this.author);
   }
   
+}
+
+public class AudioBook extends Book {
+  private int runTime;
+
+  AudioBook(String title, String author, int runTime) {
+    super(title, author, 0);
+    this.runTime = runTime;
+  }
+}
+
+public class Ebook extends Book {
+  private String format;
+  
+  Ebook(String title, String author, int pageCount, String format) {
+    super(title, author, pageCount);
+    this.format = format;
+  }
 }
