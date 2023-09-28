@@ -68,7 +68,28 @@ class Main {
 }
 ```
 
-You can concatonate strings with variables using the `+` symbole
+If you would like a variable value to be constant you can use the final modifier
+```Java
+class Main {
+  public static void main(String[] args) {
+    final someVariable = 10;
+    // cannot be changed once set 
+  }
+}
+```
+
+Using the var keyword means you don't have to specify a data type
+
+```Java
+class Main {
+  public static void main(String[] args) {
+    var num = 10;
+    // the compiler will infer the type for you based on the value
+  }
+}
+```
+
+## You can concatonate strings with variables using the `+` symbole
 
 ```Java
 class Main {
@@ -79,7 +100,7 @@ class Main {
 }
 ```
 
-Here are the data types in Java. There are primitive and non-primitave types. 
+## Here are the data types in Java. There are primitive and non-primitave types. 
 
 Notes:
 - when a number has no decimal. The compiler treats is as an integer
@@ -89,6 +110,7 @@ Notes:
 class Main {
   public static void main(String[] args) {
     // Primitive Types
+    // integer, floating point, character, boolean
     // integer types
     byte singleByte = 100; // -128 to 127
     short smallNumber = 20000; // -32,768 to 32,767
@@ -115,11 +137,12 @@ class Main {
 }
 ```
 
-Type conversion can be implicit or explicit. 
+## Type conversion can be implicit or explicit. 
 
 ```Java
 class Main {
   public static void main(String[] args) {
+    // explicit
     int number1 = 5;
     double number2 = number1;
 
@@ -140,6 +163,7 @@ class Main {
   public static void main(String[] args) {
     double number1 = 5;
     int number2 = number1; // This will cause the error
+    // implicit
     int number2 = (int)number1; // This won't cause an error
     // casting is the (int) before the variable name. 
 
@@ -160,6 +184,15 @@ Notes:
 ```Java
 class Main {
   public static void main(String[] args) {
+    // Precedence in priority order
+    // post fix x++ x--
+    // pre fix ++x --x
+    // multiplicative * / %
+    // add/subtract + -
+    // if precedence is equal then the equation solves left to right
+    // you can override precedence using parenthesis ()
+    // parenthesis can be nested
+
     int number1 = 12;
     int number2 = 6;
 
@@ -178,9 +211,28 @@ class Main {
 
     // remainder (modulo/modulus)
     System.out.println(number1 % number2); // 0
+
+    // a widing conversion is a conversion of a smaller number to a larger and the compiler can handle that
+    // the compiler cannot handle narrowing conversions unless you use explicit casting
+    // 16 bit numbers will change to 32 bit in an implicit conversion
+
+    short byteval = (short) (byteval - longval) // here we convert a long to short
+    // we enclose the two values in parenthesis to convert the result at the end to short
+
+    // implicit
+    // numbers convert to largest decimal type. can't do the other way around
+    // when reassigning you can only cast decimal to int
+    // if mixing floating point the compiler prioritizes double
+    // if mixing float and integer then the compiler prioritizes the largest floating point
+    
+    // explicit
+    // if converting long to short. bits are dicarded from the value
+    // if converting float to int then the decimals get discarded
+    // if converting int to float u lose precision
+
   }
 
-  public static void operatorsContinued(String[] args) {
+  public void operatorsContinued(String[] args) {
     // other ways to add
     int number = 12;
     number = number + 5;
