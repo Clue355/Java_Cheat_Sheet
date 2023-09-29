@@ -13,6 +13,7 @@ class Main {
   }
 }
 ```
+## Variables
 
 To create a variable, you must specify both its data type and name. Each statement should conclude with a semicolon; failing to do so will result in an error. 
 
@@ -78,6 +79,16 @@ class Main {
 }
 ```
 
+multiple variables can be initialized at one using a comma
+
+```Java
+class Main {
+  public static void main(String[] args) {
+    int a = 4, b = 5, c = 6;
+  }
+}
+```
+
 Using the var keyword means you don't have to specify a data type
 
 ```Java
@@ -89,18 +100,9 @@ class Main {
 }
 ```
 
-## You can concatonate strings with variables using the `+` symbole
+## Data types
 
-```Java
-class Main {
-  public static void main(String[] args) {
-    int num = 10;
-    System.out.println("my age is " + num)
-  }
-}
-```
-
-## Here are the data types in Java. There are primitive and non-primitave types. 
+Here are the data types in Java. There are primitive and non-primitave types. 
 
 Notes:
 - when a number has no decimal. The compiler treats is as an integer
@@ -127,9 +129,10 @@ class Main {
     boolean isWeekend = false;
     boolean isWeekday = true;
 
-    // Non-primitive Types
     // characters
     char copyWriteSymbol = '\u00A9';
+
+    // Non-primitive Types
 
     //String
     String name = "your name";
@@ -137,7 +140,7 @@ class Main {
 }
 ```
 
-## Type conversion can be implicit or explicit. 
+Type conversion can be implicit or explicit. 
 
 ```Java
 class Main {
@@ -176,6 +179,8 @@ Ex output:
 ```
 5
 ```
+
+## Operators
 
 Here are examples of operators in Java.
 Notes:
@@ -272,6 +277,7 @@ class Main {
   }
 }
 ```
+
 Some examples of combining operators and different operators
 ```Java
 class Main {
@@ -312,6 +318,9 @@ class Main {
   }
 }
 ```
+
+## Strings
+
 examples of strings
 ```Java
 class Main {
@@ -336,6 +345,18 @@ class Main {
   }
 }
 ```
+
+ You can concatonate strings with variables using the `+` symbole
+
+```Java
+class Main {
+  public static void main(String[] args) {
+    int num = 10;
+    System.out.println("my age is " + num)
+  }
+}
+```
+
 examples of string methods
 ```Java
 class Main {
@@ -378,6 +399,8 @@ class Main {
   }
 }
 ```
+## User Input
+
 How to take input from a user examples
 
 ```Java
@@ -412,7 +435,9 @@ class Main {
 }
 ```
 
-examples of conditionals
+## Conditionals
+
+examples of if else statements
 ```Java
 import java.util.Scanner;
 
@@ -436,8 +461,123 @@ class Main {
     } else {
       System.out.printf("%s is not a supported operation", oper);
     }
+
+    if (oper.equals("sum")
+      System.out.println("sum")
+    // java can execute the next line if there's no block, but only the next line
+    // if there's mutliple lines of code the next one won't execute
   
     scanner.close();
+  }
+}
+```
+
+conditional assignment
+
+```Java
+class Main {
+  public static void main(String[] args) {
+    // ex condition ? true-value : false-value;
+
+    int value1 = 7
+    int value2 = 5
+    int result = value1 > value2 ? value1 : value2;
+
+    System.out.println(result) // 7
+  }
+}
+```
+
+And operator
+
+```Java
+class Main {
+  public static void main(String[] args) {
+    int a = 20, b = 14, c = 5;
+    
+    if ( a > b & b > c) {
+      
+    }
+    // only true if both sides resolve to true
+  }
+}
+```
+
+Or operator
+
+```Java
+class Main {
+  public static void main(String[] args) {
+    int a = 20, b = 14, c = 5;
+    
+    if ( a > b | b > c) {
+      
+    }
+    // only true if one side or both resolves to true
+  }
+}
+```
+
+Xor operator
+
+```Java
+class Main {
+  public static void main(String[] args) {
+    int a = 20, b = 14, c = 5;
+    
+    if ( a > b ^ b > c) {
+      
+    }
+    // only true if one side resolves to true, but not both
+  }
+}
+```
+
+Negation operator
+
+```Java
+class Main {
+  public static void main(String[] args) {
+    int a = 20, b = 14, c = 5;
+    
+    if ( !b < c) {
+      System.out.println("true");
+    }
+    // only true if the condition is false as it returns the opposite of the condition
+  }
+}
+```
+
+And And operator
+
+```Java
+class Main {
+  public static void main(String[] args) {
+    int a = 20, b = 14, c = 5;
+    
+    if ( a > b && b > c) {
+      System.out.println("true");
+    }
+    // only executes the right side if the left is true
+    // if left side is false, the right side is never executed
+    // only true if both conditions are true
+  }
+}
+```
+
+Double Or operator
+
+```Java
+class Main {
+  public static void main(String[] args) {
+    int a = 20, b = 14, c = 5;
+    
+    if ( a > b || b > c) {
+      System.out.println("true");
+    }
+    // only executes right side if the left is false
+    // if right side is true then right side never executed
+    // only true if one of the sides is true
   }
 }
 ```
@@ -449,27 +589,31 @@ import java.util.Scanner;
 
 class Main {
   public static void main(String[] args) {
+    // supported primitive types: byte, short, int, long, char
     Scanner scanner = new Scanner(System.in);
 
     System.out.println("enter a random number between 1 and 3");
     int oper = Integer.parseInt(scanner.nextLine());
 
     switch (oper) {
-      case "1":
+      case 1:
         System.out.println("you chose 1");
         break;
-      case "2":
+      case 2:
         System.out.println("you chose 2");
         break;
-      case "3":
+      case 3:
         System.out.println("you chose 3");
         break;
       default:
         System.out.println("default");
+      break;
     }
   }
 }
 ```
+
+## Arrays
 
 Array examples
 ```Java
@@ -557,6 +701,8 @@ class Main {
 }
 ```
 
+## For Loops
+
 examples of for loops
 
 ```Java
@@ -617,6 +763,8 @@ class Main {
 }
 ```
 
+## While Loops
+
 examples of while loops
 
 ```Java
@@ -642,6 +790,8 @@ class Main {
   }
 }
 ```
+## Array List
+
 examples of an array list
 
 ```Java
@@ -712,6 +862,8 @@ class Main {
   }
 }
 ```
+
+## Hashmaps
 
 examples of hashmaps
 
