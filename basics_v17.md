@@ -786,6 +786,7 @@ class Main {
       multi++;
     } while (multi <= 10) 
     // format for a do while loop
+    // runs the body of the loop then checks the condition
 
   }
 }
