@@ -622,6 +622,11 @@ import java.utils.Arrays;
 class Main {
   public static void main(String[] args) {
     char vowels[] = new char[5];
+    // or
+    double[] interest = new double[argument]
+    // you can use an argument with values to fill an array
+
+    char vowels[] = new char[5];
     // array of single character strings
     // the 5 specifies the amount of maximum strings in the array
 
@@ -759,6 +764,19 @@ class Main {
     }
     // shorthand for loop through an array
 
+  }
+}
+```
+
+## For Each Loop
+
+```Java
+class Main {
+  public static void main(String[] args) {
+    int[] nums = {1,2,3}
+    for(int num : nums) {
+      // loops through each of the nums under the variable num
+    }
   }
 }
 ```
@@ -923,6 +941,63 @@ class Main {
     // make sure to enclose more than one variable in parentheses ()
   }
 }
+```
+
+## Methods
+
+```Java
+
+class Main {
+  public static void main(String[] args) {
+      // methods are made outside the main function
+  }
+
+// methods or functions
+// get passed parameters. they are a copy of the original value
+// they will not alter the original only the copy which is scoped inside a method
+
+static void method() {
+  // its always prefered that you exit a method if a certain condition is true
+  // one that won't let the code run
+
+  // this is the method structor
+  // we put void if the method does not return a value
+  // we put the data type of the return value if there is one
+
+  // you can add a return method before the last line of code or after all code is executed
+  // running out of code inside a method also exits the method
+  return;
+
+}
+
+static int add(int num1, int num2) {
+  int sum = num1 + num2;
+  return sum;
+  // or
+  return num1 + num2;
+}
+
+static double[] numbers() {
+  // this is the data type of a double array
+}
+}
+
+```
+
+## Command Line Arguments
+
+```Java
+// run the program and add a white space separated argument after
+ex: java mainprogram hello world
+// hello gets added into the string list args
+// adding quotes around a space seperated argument makes it into one
+ex: java mainprogram "hello world"
+
+class Main {
+  public static void main(String[] args) {
+      System.out.println(args)
+      // would show an array with hello and world seperated in it
+  }
 ```
 
 ## The end of basics!!
