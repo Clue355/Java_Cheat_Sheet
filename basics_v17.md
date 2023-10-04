@@ -326,7 +326,8 @@ examples of strings
 class Main {
   public static void main(String[] args) {
     char percentSign = '%'; // stores one character
-    String name = "something interesting"; // stores a string
+    String name = "something interesting"; // holds a reference to instance of string
+    // immutable. never directly changed when altered. original value stays the same
     // if we have two strings that are made this way and are compared we get true
     // because these two values will have the same location in memory
   
@@ -342,17 +343,29 @@ class Main {
     // then put in order what value you want in that place in order at the end that is seperated with a comma
     System.out.printf("hello %s", name);
     // this is a shorthand way to do string format
+
+    // when comparing Strings with the == double equals. It does not check the value, but the reference of the String
+    // for example if you made two strings that contained the same phrase. it checks the location they are held.
+    // two strings having the same value does not mean they are the same String
+    // the .equals() method is the function you need to compare the values only
   }
 }
 ```
 
- You can concatonate strings with variables using the `+` symbole
+ You can concatonate strings with variables using the `+` and the `+=` symbols
 
 ```Java
 class Main {
   public static void main(String[] args) {
-    int num = 10;
-    System.out.println("my age is " + num)
+    String greeting = "hello, "
+    int name = "carlos;
+    System.out.println("hello, my name is" + name)
+
+    greeting += name
+    System.out.println(greeting)
+    // output: hello, carlos
+    // when a string is concatonated this way a new instance is made
+    // the variable then points to that new instance
   }
 }
 ```
@@ -364,6 +377,47 @@ class Main {
     String name = "carlos";
     System.out.println(name.length());
     // this method will return how many characters there are in a string including spaces
+
+    System.out.println(s1.concat(s2));
+    // combines two strings
+
+    System.out.println(s1.trim());  
+    // returns a certain section of the string
+
+    System.out.println(s1.split());
+    // splits a string into characters
+
+    System.out.println(s1.charAt());
+    // extract a character from string
+
+    System.out.println(s1.subString());
+    // take a small section of a string and return it
+
+    System.out.println(s1.endsWith());
+    // end with certain characters
+
+    System.out.println(s1.startsWith());
+    // start with certain characters
+
+    System.out.println(s1.indexOf());
+    // index of a character
+
+    System.out.println(s1.lastIndexOf());
+    // location of a character or characters
+
+    System.out.println(s1.equalsIgnoreCase());
+    // checks if equal except for a certain case
+
+    System.out.println(s1.compareTo());
+    // greater than or less than comparisons
+
+    System.out.println(s1.compareToIgnoreCase());
+
+    //System.out.println(s1.format());
+
+    String val = String.valueOf(var)
+    System.out.println(val);
+    // create strings from non strings
 
     String name = "carlos";
     System.out.println(name.isEmpty());
@@ -396,6 +450,13 @@ class Main {
     String string = "the sky is blue";
     System.out.println(string.contains("sky"));
     // this methods checks if a certain set of characters are in a string
+
+    String s3 = s2.intern();
+    String s4 = s1.intern()
+    // this methods looks at the value of s2 and looks for a copy
+    // if not, it creates a copy of s2.
+    // when comparing these values with == double equals s4 == s3 returns true
+    // because they are the same value copy and point to the same location
   }
 }
 ```
