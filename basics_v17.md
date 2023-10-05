@@ -348,6 +348,8 @@ class Main {
     // for example if you made two strings that contained the same phrase. it checks the location they are held.
     // two strings having the same value does not mean they are the same String
     // the .equals() method is the function you need to compare the values only
+
+    
   }
 }
 ```
@@ -366,6 +368,10 @@ class Main {
     // output: hello, carlos
     // when a string is concatonated this way a new instance is made
     // the variable then points to that new instance
+
+    int i = 0;
+    String output = i + " * "'
+    // the compiler will convert i to a string if you add a string to it
   }
 }
 ```
