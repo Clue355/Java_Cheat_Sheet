@@ -466,6 +466,41 @@ class Main {
   }
 }
 ```
+
+## String Builder
+
+```Java
+class Main {
+  public static void main(String[] args) {
+    StringBuilder string = new StringBuilder();
+    // creates a buffer for building strings
+
+    StringBuilder string = new StringBuilder(40);
+    // you can specify how many characters it will have so it runs effiecient
+
+    string.append("hello world");
+
+    string.append(5);
+    // you can use the append to add an integer which gets converted to String
+
+    String message = string.toString();
+    // convert the string to a string type to extract the value
+
+    int pos = string.indexOf(" w");
+    // gives you the position of the space in the buffer
+
+    string.insert(pos, " my ");
+    // insert my at the postion with two spaces
+
+    string.insert(pos + 6, " something ");
+    // adds something 6 characters to the right of pos
+
+    String message = string.toString();
+    // prints out the string that's been further edited
+  }
+}
+```
+
 ## User Input
 
 How to take input from a user examples
@@ -504,6 +539,7 @@ class Main {
 
 ## Conditionals
 
+- How to use util.Scanner
 examples of if else statements
 ```Java
 import java.util.Scanner;
@@ -826,11 +862,17 @@ class Main {
 
     int numbers[] = {1,2,3};
 
-    for(int numbers : number) {
+    for(int number : numbers) {
       System.out.println(number);
     }
     // shorthand for loop through an array
 
+    for(int number : numbers) {
+      System.out.println(number);
+      if(number.equals(1)) break;
+    }
+    // when looping through a for loop you can get out of it by putting in the break keyword
+    // this is great for conditions
   }
 }
 ```
@@ -1065,6 +1107,66 @@ class Main {
       System.out.println(args)
       // would show an array with hello and world seperated in it
   }
+```
+
+## Classes and Objects
+
+```Java
+// declare a class by the class keyword and name
+// you always capitolize the name
+class Flight {
+  // class members
+  //fields
+  int passengers;
+  int seats;
+
+  // contructor looks like a method
+  // does not have a return type and has the same name of the class
+  Flight() {
+    seats = 150;
+    passengers = 0;
+  }
+
+  void add1Passenger() {
+    if( passengers < seats) {
+      passengers += 1;
+    }
+  }
+}
+// when you put this in a seperate file you name the file as the same name of the class
+// ex: Flight.java
+// classes have state and executable code
+// field: stores object state
+// methods: are executable code that manipulates state and perform operations
+// constructors: executable code used during object creation to set initial state
+
+Flight nycToLiv; // creates a reference to the flight object
+nycToLiv = new Flight(); // this creates a new flight instance a.k.a. an object
+// nycToLiv is a reference to the object instance of the flight class
+Flight sfToTx = new Flight(); // this is the same thing in one line
+
+sfToTx.add1Passenger();
+// adds one passenger to passengers in sfToTx only
+
+sfToTx = nycToLiv;
+// sfToTx now points to nycToLiv reference object and has those values now
+
+nycToLiv.add1Passenger();
+// adds one to passengers in the nyc object instance
+
+System.out.println(sfToTx.passengers);
+// prints out 1 since it's pointing to the same object instance as nycToLiv
+
+// Array of Classes
+Flight[] flights = new Flight[3];
+// creats 3 references of type Flight
+
+flights[0] = new Flight();
+flights[0].passengers = 10;
+// changes the value of the first instance
+
+flights[0] = create(10);
+
 ```
 
 ## The end of basics!!
