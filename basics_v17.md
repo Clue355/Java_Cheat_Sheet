@@ -1165,7 +1165,67 @@ flights[0] = new Flight();
 flights[0].passengers = 10;
 // changes the value of the first instance
 
-flights[0] = create(10);
+for(Flight flight: flights) {
+  
+}
+
+private static Flight create(params here) {
+  Flight flights = new Flight();
+  flights[0].passengers = 10;
+  return flights;
+}
+// alternate way to create an object from a class
+
+```
+
+## Encapsultation and Access Modifiers
+
+```Java
+// Types of Modifiers
+
+// None - A.K.A. package private - usable in classes and members
+// Visibility only within it's own package
+
+// public - usable in classes and members
+// Visible everywhere
+
+// private - usable in members - Usable within top-level classes which makes it available to nested; Unusable to classes 
+// Visible only within the declaring class
+
+class Main {
+  public static void main(String[] args) {
+      System.out.println(args)
+      
+  }
+
+class Flight {
+  int passengers;
+  int seats;
+
+  Flight() {...}
+
+  void add1Passenger() {...}
+
+  private void handleTooMany() {...}
+}
+
+// marking class flight as public lets you declare variables of flight anywhere including seperate files
+// ex : public class Flight {...}
+
+// marking the constructor public allows you to create instances anywhere
+// ex : public FLight() {...}
+
+// marking the two variables passengers and seats private means that they can only be accessed inside the class
+// This will give off an error if you try to access it from anywhere else
+// ex : private int passengers; private int seats;
+
+// marking the add1Passenger method as public will allow you to add one to passengers even when passengers is set to private
+// ex : public voic add1Passenger() {...}
+
+// another method from within the class can access and use a seperate private method
+// The handle too many method can be called like this handleTooMany();
+// outside of the class it can't be used
+
 
 ```
 
