@@ -1273,7 +1273,7 @@ class Flight {
   return seats;
 }
 
-public void setSeats(int seats) {
+  public void setSeats(int seats) {
   this.seats = seats;
 }
 // we use getters and setters to hide the implimentation details of the class state
