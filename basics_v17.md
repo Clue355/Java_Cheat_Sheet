@@ -159,6 +159,8 @@ Ex output:
 5.0
 ```
 
+## Type Casting
+
 If you try to do the reverse like in the example below you get an error. instead you should convert using a casting operator. changing a decimal to a int rounds the number down to a whole number
 
 ```Java
@@ -1178,6 +1180,138 @@ private static Flight create(params here) {
 
 ```
 
+## Class Constructors and Initializers
+
+```Java
+/*
+Default state of fields
+
+byte, short, int, and long = 0
+float double = 0.0
+
+char = '\u0000'
+
+boolean = false
+
+reference types = null
+
+Field initializers specifies a fields initial value
+ex: int number = 10;
+they can be set to a certain state using type casting
+ex: int number = (int) (100 + 1.0);
+this will equal 101
+
+Contructors are code that runs during object creation
+every class must have atleast one constructor
+They are also not limited to having just one constructor
+- each must have a unique parameter list
+- different number of parameters
+- different parameter types
+** example of two constructors below in Example Default **
+a constructor without any arguments is called the default constructor
+it also allows you to create an instance without any arguments needed
+
+chaining constructors - when one constructor calls another
+the call must be the first line of a constructor with params
+** There's an example below under Example Constructor Chaining **
+the first constructor called depends on the arguments passed in
+each value will be passed into the other constructor depending on data type
+the constructors resolve from conditionals to passing in arguments to other constructors
+then assigning values. kind of like resolving backwards after all conditions are resolved
+- you can use this(); to chain to the first constructor if it has code in it
+
+constructor visibility:
+a constructor that's public can still chain to a private constructor
+
+initialization blocks:
+- cannot recieve params
+- place code within brackets outside of methods or constructors
+- always execute no matter how many you have
+- executes in order of top to bottom
+
+initialization and constructor order:
+- field initializers are first and set
+- then it's the initialzation blocks that run
+- lastly constructors run depending on specified arguments
+
+*/
+
+initialize values in a constructor with loops example:
+class Flights {
+private int seats = 150
+private boolean[] isSeatAvailable = new boolean[seats]
+Flights() {
+  for(int i = 0; i < seats; i++) {
+    isSeatAvailable[i] = true
+  }
+}
+}
+
+initialization block example:
+class Flights {
+private int seats = 150
+private boolean[] isSeatAvailable = new boolean[seats]
+// this block below is code that runs instantly and in order
+{
+  for(int i = 0; i < seats; i++) {
+    isSeatAvailable[i] = true
+  }
+}
+
+}
+
+Example Default:
+class Flight {
+  int passengers;
+  int seats;
+  int bags;
+
+  Flight() {}
+  Flight(int bags) {
+    this.bags = bags
+}
+
+  public int getSeats() {
+  return seats;
+}
+
+  public void setSeats(int seats) {
+  this.seats = seats;
+}
+}
+
+Example Constructor Chaining:
+class Flight {
+  int passengers;
+  int seats;
+  int bags;
+  double perBagFee;
+
+  Flight(int bags) {
+    this(freeBags > 1? 25.0d : 50.0d);
+    this.bags = bags;
+}
+
+  Flight(int freeBags, int checkedBags) {
+    this(freeBags); // calls first constructor and passes freeBags as an argument
+    this.checkedBages = checkedBags;
+}
+
+  Flight(double perBagFee) {
+    this.perBagFee = perBagFee;
+}
+
+  public int getSeats() {
+  return seats;
+}
+
+  public void setSeats(int seats) {
+  this.seats = seats;
+}
+}
+
+```
+
 ## Encapsultation and Access Modifiers
 
 ```Java
@@ -1191,6 +1325,8 @@ private static Flight create(params here) {
 
 // private - usable in members - Usable within top-level classes which makes it available to nested; Unusable to classes 
 // Visible only within the declaring class
+
+// protected - variable, methods or class - can be accessed within it's own package and by subclasses even in a differnet package
 
 class Main {
   public static void main(String[] args) {
