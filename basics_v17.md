@@ -1225,8 +1225,59 @@ class Flight {
 // another method from within the class can access and use a seperate private method
 // The handle too many method can be called like this handleTooMany();
 // outside of the class it can't be used
+```
+
+## This and Null
+
+```Java
+// this - implicit reference to the current object
+// null - represents an uncreated object
+Flight lax1 = new Flight();
+Flight lax2 = new Flight();
+
+Flight lax3 = null;
+
+if(lax1.hasRoom(lax2));
+  lax3 = lax1.createNewWithBoth(lax2);
+// combines passengers from both lax1 and lax2 into lax3 while creating a new instance
 
 
+class Main {
+  public static void main(String[] args) {
+      
+  }
+
+class Flight {
+  int passengers;
+  int seats;
+  Flight() {
+}
+
+public boolean hadRomm(Flight f1) {
+  int total = this.passengers + f1.passengers
+  // here this refers to this classes passengers and not f1
+  return total <= seats
+}
+}
+```
+
+## Field Encapsulation
+
+```Java
+class Flight {
+  int passengers;
+  int seats;
+  Flight() {}
+
+  public int getSeats() {
+  return seats;
+}
+
+public void setSeats(int seats) {
+  this.seats = seats;
+}
+
+}
 ```
 
 ## The end of basics!!
