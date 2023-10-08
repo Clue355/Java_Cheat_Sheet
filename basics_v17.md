@@ -1276,6 +1276,10 @@ class Flight {
 public void setSeats(int seats) {
   this.seats = seats;
 }
+// we use getters and setters to hide the implimentation details of the class state
+// the methods implimented control the class field access. fields meaning the variables
+// the state should not be directly accessible from outside the class
+// this pattern is called the access/mutators pattern
 
 }
 ```
