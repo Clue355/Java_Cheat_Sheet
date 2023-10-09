@@ -1420,4 +1420,16 @@ class Flight {
 }
 ```
 
+## Static Members
+
+```Java
+/*
+static members are shared class-wide and are no associated with an individual instance
+- Declared using the static keyword
+- accessible using class name
+
+
+ */
+```
+
 ## The end of basics!!
