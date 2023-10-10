@@ -1424,9 +1424,17 @@ class Flight {
 
 ```Java
 /*
-static members are shared class-wide and are no associated with an individual instance
+static members are shared class-wide and are not associated with an individual instance
 - Declared using the static keyword
 - accessible using class name
+
+static Fields
+- not associated with a specific instance
+- all instances have accesss to the same value
+
+static members
+- performs an action not tied to a specific instance, but class
+- has access to other static members only
 
 
  */
