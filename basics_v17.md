@@ -1432,9 +1432,12 @@ static Fields
 - not associated with a specific instance
 - all instances have accesss to the same value
 
-static members
+
+static methods
 - performs an action not tied to a specific instance, but class
 - has access to other static members only
+instances of a class will have seperate counts, but the original class will hold the sum of a value that is static
+
 
 
  */
