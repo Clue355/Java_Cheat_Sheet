@@ -1438,6 +1438,13 @@ static methods
 - has access to other static members only
 instances of a class will have seperate counts, but the original class will hold the sum of a value that is static
 
+static import statement
+- used with static methods
+- allows method name to be used without being class-qualified
+
+ex:
+import static Flight.methodName;
+// reference a static member
 
 
  */
