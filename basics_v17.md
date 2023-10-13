@@ -1096,9 +1096,59 @@ static double[] numbers() {
 ```
 
 ## Methods Continued
+- passing objects as parameters
+- effect of changes to object parameters
+- overloading
+- overloaded method resolution
+- object class and methods
 
 ```Java
+/*
+- objects are passed by reference. parameter recieves a copy of the reference
+- changes can be made to the reference and are visible within the method and not outside
+ex:
+Flight val1 = new Flight(10);
+Flight val2 = new Flight(20);
+swapFlight(val1, val2);
 
+// here we swap both flights with each other
+// once we print these flights you'll see that they aren't swapped even though
+// they were put through the swapFLight method
+// it only made changes to the copies and not originals. so instances
+static void swapFlight(Flight i, Flight j) {
+Flight k = i;
+i = j;
+j = k;
+}
+
+- changes to members visible within method and outside method
+ex:
+Flight val1 = new FLight(10);
+Flight val2 = new Flight(20);
+swapNumbers(val1, val2);
+
+// same thing as above, but with members changes are seen outside
+// so if we print out getFlightNumber(); to one it shows a changed value that was swapped
+static void swapNumbers(Flight i, FLight j) {
+  int k = i.getFLightNumber();
+  i.setFlightNumber(j.getFlightNumber);
+  j.setFlightNUmber(k);
+}
+
+overloading
+- you can have multiple versions of a method or constructor within a class
+- each constructor and method must have a unique signature
+- parts that makeup the signature: number of parameters, Data type of each parameter, method name
+ex:
+class Passenger {
+Passenger() {...}
+Passenger(int freeBags) {...}
+Passenger(double perBagFee) {...}
+Passenger(int freeBags, int checkedBags) {...}
+}
+
+
+*/
 ```
 
 ## Command Line Arguments
