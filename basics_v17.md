@@ -1095,6 +1095,12 @@ static double[] numbers() {
 
 ```
 
+## Methods Continued
+
+```Java
+
+```
+
 ## Command Line Arguments
 
 ```Java
@@ -1441,11 +1447,33 @@ instances of a class will have seperate counts, but the original class will hold
 static import statement
 - used with static methods
 - allows method name to be used without being class-qualified
-
 ex:
 import static Flight.methodName;
-// reference a static member
+- reference a static member
+This changes FLight.methodName(); to methodName(); simplifying a call to a method
+or
+You can use import static Flight.*; to import all static methods
 
+static initialization blocks
+- perform one-time type initialization
+  - execute before type's first use
+  - has access to static members only
+Statements enclosed in brackets
+  - Preceded by statci keyword
+  - outside of any method or constructor
+ex:
+public class Flight {
+private int passengers, seates = 150;
+private static int allPassengers, maxPassengersPerFlight;
+
+static {
+  AdminService admin = new AdminService();
+  admin.connect();
+  maxPassengersPerFlight = admin.isRestricted() ?
+    admin.getMaxFlightPassenger() : Integer.MAX_VALUE;
+  admin.close();
+}
+}
 
  */
 ```
