@@ -1528,4 +1528,118 @@ static {
  */
 ```
 
+## Object Class Inheritance & Methods
+
+```Java
+/*
+Class Inheritance
+- Allows one class to be declared with the characteristics of another
+
+Object Class
+- root of java hierarchy
+- an object reference can reference an instance of any class
+- every class has characteristics of an object or values
+ex:
+Object[] stuff = new Object[3];
+stuff[0] = new Flight(123);
+stuff[1] = new MathEquation();
+stuff[2] = "I like java";
+// strings are considered a class
+// these references let you work with the object characteristics
+
+Object o = "just a string";
+o = new Flight(123);
+// you can reassign the reference
+
+ex2:
+void doWork(Object o) {
+  // do something with object characteristics of o
+}
+
+Flight f = new Flight(123);
+doWork(f);
+
+Passenger p = new Passenger();
+doWOrk(p);
+
+Methods:
+clone - create new object instance that duplicates the current instance
+hashCode - get a hashcode for the current instance
+getClass - return type info for the current instance
+finalize - handle special resource cleanup scenarios
+toString - return a string value representing the current instance
+equals - compare another object to the current instance for equality
+
+comparing values ex:
+// the equals method will be modified to compare flightNumber values instead of instances
+public class Flight {
+private int flightNumber;
+
+public boolean equals(Object o) {
+  if ( !(o instanceof Flight) )
+    return false;
+  // Flight flight = (Flight) o;
+  return flightNumber == flight.flightNumber;
+}
+// with this method edited with the check. you can't compare instances of Flight with other class instances
+// you can't type instances of one class to another
+}
+*/
+```
+
+## Primitive Wrappers
+
+```Java
+/*
+Primitive Types
+- byte, short, int, long
+- float, double
+- char
+- boolean
+- primitive types represent data only
+- unable to provide methods for operating on that data
+
+Primitive Wrapper Classes
+- can hold primitive data values
+- can also have methods because they are classes
+- enable compatability with richer aspects of java type system
+- each primitive type has a wrapper class
+Wrapper Classes:
+- Byte, Short, Integer, Long
+- Float, Double
+- Character
+- Boolean
+
+examples of how primitive types are stored
+int valA = 10; // directly stored in variable
+
+Integer valB = 20; // holds a reference to the Integer instance
+// inside the instance is the value 20.
+// think of a class Integer that has a variable that holds 20
+
+Boxing:
+- Process of converting a primitive type to a wrapper class
+Integer valC = valA; // automatic conversion in this case
+
+Unboxing:
+- Process of converting a wrapper class to a primitive type
+int valD = valB; // automatic conversion
+
+Methods primitive wrappers add:
+- converting to and from other types
+- extracting values from strings // string integer to int
+- finding min/max values of a type
+- and more!
+
+*/
+```
+
+## Enums
+
+```Java
+/*
+
+*/
+```
+
 ## The end of basics!!
