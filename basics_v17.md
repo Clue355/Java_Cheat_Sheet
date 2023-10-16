@@ -1773,4 +1773,12 @@ if(p1.equals(p2)) // compares all fields in p1 & p2 like looping through a list
 */
 ```
 
+## Annotations
+
+```Java
+/*
+
+*/
+```
+
 ## The end of basics!!
