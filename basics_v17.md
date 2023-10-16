@@ -1634,10 +1634,78 @@ Methods primitive wrappers add:
 */
 ```
 
-## Enums
+## Enums and Relative Comparisons
 
 ```Java
 /*
+- useful for defining a type with a finite list of valid values
+- provide a comma seperated value list
+- value names are all upper case
+- holds references
+ex:
+public enum FlightCrewJob {
+FLIGHT_ ATTENDANT, // lowest ordering
+COPILOT, // mid ordering
+PILOT // highest ordering
+}
+
+- supports equality tests like == or != operators
+ex:
+FlightCrewJob job1 = FlightCrewJob.PILOT;
+FlightCrewJob job12 = FlightCrewJob.FLIGHT_ATTENDANT;
+
+if(job1 == FlightCrewJob.PILOT)
+  System.out.println("job1 is Pilot");
+
+if(job1 != job2)
+  System.out.println("job1 and job2 are different");
+
+- Enum supports switch statements
+ex:
+void jobResponsibilites(FlightCrewJob job) {
+  switch(job) {
+    case FLIGHT_ATTENDANT:
+      System.out.println("Assures passenger safety");
+      break;
+    case PILOT:
+      System.out.println("flies plane");
+      break;
+    
+  }
+
+enum methods
+values - returns array containing all values
+valueOf - returns the value that corresponds to a string (case sensitive)
+
+Relative Comparison
+- values are ordered
+- first value is lowest
+- last value is highest
+
+use compareTo for relative comparison
+- returns negative, zero, or positive value
+- indicates current instances ordering relative to another value
+- comparing one num to another returns negative if the current num is lower or positive
+if it's higher
+ex:
+class CrewMember {
+FlightCrewJob job;
+String name;
+
+CrewMember(FlightCrewJob job, String name) {
+    this.job = job;
+    this.name = name;
+  }
+}
+
+void whoIsInCharge(CrewMember member1, CrewMember member2) {
+  CrewMember boss = member1.getJob().compareTo(member2.getJob()) > 0?
+    member1 : member2;
+
+  System.out.println(bos.getName() + " is Boss");
+}
+
+}
 
 */
 ```
