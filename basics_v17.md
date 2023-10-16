@@ -1642,6 +1642,7 @@ Methods primitive wrappers add:
 - provide a comma seperated value list
 - value names are all upper case
 - holds references
+- enums are classes with methods
 ex:
 public enum FlightCrewJob {
 FLIGHT_ ATTENDANT, // lowest ordering
@@ -1677,6 +1678,32 @@ enum methods
 values - returns array containing all values
 valueOf - returns the value that corresponds to a string (case sensitive)
 
+enums types are a class
+- implicitly inherit from Java's enum class
+- similar to other class in some ways
+- have some special characters
+enum types can have members
+- fields
+- methods
+- constructors
+enum values
+- each value is an instance of the enum type
+- declaring the value creates the instance
+- can leverage the enum type's constructor
+
+ex:
+public enum FlightCrewJob {
+FLIGHT_ATTENDANT("Flight Attendant"), // like passing in a string to a constructor. we pass in the title to each
+COPILOT("First Officer"),
+PILOT("Captain");
+private String title;
+public String getTitle() {return title;}
+
+private FlightCrewJob(String title) {  
+  this.title = title;
+}
+}
+
 Relative Comparison
 - values are ordered
 - first value is lowest
@@ -1707,6 +1734,42 @@ void whoIsInCharge(CrewMember member1, CrewMember member2) {
 
 }
 
+*/
+```
+
+## Records
+
+```Java
+/*
+Data-only classes
+- serve only as data carriers
+- initialized with required data values
+- those values never change
+has boiler plate code
+- constructor to initialize instance fields
+- getters for each instance field
+- common methods such as equals, hashCode, and toString
+
+Record
+- fixes all of these issues
+- simplifies data-only classes
+- create a record by using record keyword
+- created class is immutable
+- automatically generates a constructor to initialize fields, getters for each field,
+and creates the common methods needed in each class
+- in some use cases there are extra things you can do
+
+ex:
+public record Passenger(String name, int checkedBags) {}
+
+Passenger p1 = new Passenger("bob", 2);
+String name = p1.name(); // gets name
+int bags = p1.checkedBags(); // getters same name as params
+
+Passenger p2 = new Passenger("maria", 1);
+
+if(p1.equals(p2)) // compares all fields in p1 & p2 like looping through a list
+  // do something
 */
 ```
 
