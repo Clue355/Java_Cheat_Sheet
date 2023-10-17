@@ -1539,6 +1539,7 @@ Object Class
 - root of java hierarchy
 - an object reference can reference an instance of any class
 - every class has characteristics of an object or values
+- automatically provide methods like toString();
 ex:
 Object[] stuff = new Object[3];
 stuff[0] = new Flight(123);
@@ -1777,6 +1778,45 @@ if(p1.equals(p2)) // compares all fields in p1 & p2 like looping through a list
 
 ```Java
 /*
+- special types that act as metadata
+- applied to a specific target
+- no direct affect on target behavior
+- must be interpreted by tools like compilers and/or execution environments and/or any program
+
+- annotations allow other code to act on your metadata
+- always preceded by an @ "at" symbol
+- placed directly before a target
+- allowable targets vary with annotations
+
+- built into core java platform
+- java provides types for creating annotations
+- java has only a few annotations
+- widely used by other tools/environments
+- like xml and json processesors to simplify mapping between xml or json representations
+- interpret annotations with your code
+
+Common java core platform annotations
+- Override | override an inherited method
+- Deprecated | indicate that a prefered method is no longer the way to do something
+- SurpressWarnings | indicate to the compiler not to generate certain warnings
+
+ex:
+@SurpressWarnings("deprecated") // stops warning related to deprecation
+public class MyWorker {
+  @Deprecated // makes this function deprecated
+  void doSomeWork() { // generates a warning when the code is compiled
+    Doer d1 = new Doer();
+    d1.doThing();
+  }
+
+  @SurpressWarnings("deprecated") // you can move this annotation to the method to affect only that instead of the whole class
+  void doDoubleWork() {
+    Doer d2 = new Doer();
+    d1.doThing();
+    d1.doThing();
+  }
+
+}
 
 */
 ```
