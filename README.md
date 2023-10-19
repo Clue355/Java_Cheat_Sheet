@@ -3,7 +3,7 @@ This is an accumulation of what I've learned about Java
 
 ## Basics_v17
 This file contains the info of several tutorials I've gone through. Over 11 hours worth of material so far
-#### Contents
+### Contents of this file
 [Variables](https://github.com/Clue355/Java_Cheat_Sheet/blob/main/basics_v17.md#variables)
 
 [Data Types](https://github.com/Clue355/Java_Cheat_Sheet/blob/main/basics_v17.md#data-types)
