@@ -50,7 +50,7 @@ This file contains the info of several tutorials I've gone through. Over 11 hour
 
 [Static Members](https://github.com/Clue355/Java_Cheat_Sheet/blob/main/basics_v17.md#static-members)
 
-[Object Class Ingeritance and Methods](https://github.com/Clue355/Java_Cheat_Sheet/blob/main/basics_v17.md#object-class-inheritance--methods)
+[Object Class Inheritance and Methods](https://github.com/Clue355/Java_Cheat_Sheet/blob/main/basics_v17.md#object-class-inheritance--methods)
 
 [Primitive Wrappers](https://github.com/Clue355/Java_Cheat_Sheet/blob/main/basics_v17.md#primitive-wrappers)
 

@@ -1401,13 +1401,13 @@ class Flight {
   private void handleTooMany() {...}
 }
 
-// marking class flight as public lets you declare variables of flight anywhere including seperate files
+// marking class flight as public lets you declare variables.java of flight anywhere including seperate files
 // ex : public class Flight {...}
 
 // marking the constructor public allows you to create instances anywhere
 // ex : public FLight() {...}
 
-// marking the two variables passengers and seats private means that they can only be accessed inside the class
+// marking the two variables.java passengers and seats private means that they can only be accessed inside the class
 // This will give off an error if you try to access it from anywhere else
 // ex : private int passengers; private int seats;
 
@@ -1469,7 +1469,7 @@ class Flight {
   this.seats = seats;
 }
 // we use getters and setters to hide the implimentation details of the class state
-// the methods implimented control the class field access. fields meaning the variables
+// the methods implimented control the class field access. fields meaning the variables.java
 // the state should not be directly accessible from outside the class
 // this pattern is called the access/mutators pattern
 
