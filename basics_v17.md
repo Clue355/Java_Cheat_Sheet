@@ -1,5 +1,30 @@
 # Java Cheat Sheet
 
+## Types of Comments 
+
+There are three types of comments in java that have different purposes. 
+
+the first is a Line Comment that can create a single line comment
+```Java
+// comment here
+```
+
+the second is a block comment which you can create multiple lines with.
+```Java
+/*
+comment here
+and comment here
+*/
+```
+
+the third is a Javadoc Comment. similar to a block comment, but can also be used to generate documentation. Use Javadoc syntax to generate docs in the source code itself
+```Java
+//*
+comment here
+and comment here
+*/
+```
+
 Here's a sample of the entry class for a Java program, which serves as the starting point when you run the application. 
 This example also demonstrates how to output messages to the terminal. The class itself is enclosed in one set of curly braces, while the 'main' method within the class is encapsulated in another set.
 ```Java
