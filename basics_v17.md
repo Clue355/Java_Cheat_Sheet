@@ -42,11 +42,12 @@ class Main {
 
 To create a variable, you must specify both its data type and name. Each statement should conclude with a semicolon; failing to do so will result in an error. 
 
-While you can declare a variable without initializing it, 
-you must initialize it before using it to avoid errors. You're also free to reassign the variable later in your code. However, declaring another variable with the same name will generate an error. 
+The naming style java uses is called camel case where each word after the first starts with a upper case letter. ex: bankAccountBalance. 
+
+While you can declare a variable without initializing it, you must initialize it before using it to avoid errors. You're also free to reassign the variable later in your code. However, declaring another variable with the same name will generate an error. 
 
 If you want a variable to be accessible across multiple methods within a class, you can declare it at the class level. To make that variable compatible with static methods, simply add the 'static' keyword.
-static variables
+static variables.
 ```Java
 class Main {
   static int nums = 10;
@@ -98,7 +99,7 @@ If you would like a variable value to be constant you can use the final modifier
 ```Java
 class Main {
   public static void main(String[] args) {
-    final someVariable = 10;
+    final int someVariable = 10;
     // cannot be changed once set 
   }
 }
@@ -139,15 +140,16 @@ class Main {
     // Primitive Types
     // integer, floating point, character, boolean
     // integer types
-    byte singleByte = 100; // -128 to 127
-    short smallNumber = 20000; // -32,768 to 32,767
-    int integer = 2147483647; // -2147483648 to 2147483647
-    long largNumber = 9223372036854775807L; // -9223372036854775808 to 9223372036854775807
+    byte singleByte = 100; // -128 to 127 // 8 bits
+    short smallNumber = 20000; // -32,768 to 32,767 // 16 bits
+    int integer = 2147483647; // -2147483648 to 2147483647 // 32 bits
+    long largNumber = 9223372036854775807L; // -9223372036854775808 to 9223372036854775807 // 64 bits
     // you can also use a small L instead of capitol
 
     // decimal types
-    double double = 1.79769313; // 4.9E-324 to 1.7976931348623157E308
-    float float = 3.4028F; // 1.4E-45 to 3.4028235E28
+    double double = 1.79769313; // 1.4 x 10 ^-45 to 3.4 x 10 ^38 // 64 bits
+    // double can be double = 1.79d or double = 1.79 with or without the d at the end
+    float float = 3.4028F; // 1.4 x 10^-45 to 3.4 x 10^38 // 32 bits
     // you can also use a small F instead of capital
 
     // booleans
@@ -155,7 +157,9 @@ class Main {
     boolean isWeekday = true;
 
     // characters
-    char copyWriteSymbol = '\u00A9';
+    char copyWriteSymbol = '\u00D9'; // accented U
+    stores a single unicode character
+    uses single quotes
 
     // Non-primitive Types
 
@@ -208,6 +212,14 @@ Ex output:
 ```
 
 ## Operators
+
+types of operators:
+- basic
+  produces a result that has no impact on the values used in the operation
+- prefix/ postfix
+  increase or decrease a value and replace the original
+- compound assignment
+  operate on a value and replace the original with the result of the calculation
 
 Here are examples of operators in Java.
 Notes:
