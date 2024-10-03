@@ -147,7 +147,7 @@ class Main {
     // you can also use a small L instead of capitol
 
     // decimal types
-    double double = 1.79769313; // 1.4 x 10 ^-45 to 3.4 x 10 ^38 // 64 bits
+    double double = 1.79769313; // 1.4 x 10^-45 to 3.4 x 10 ^38 // 64 bits
     // double can be double = 1.79d or double = 1.79 with or without the d at the end
     float float = 3.4028F; // 1.4 x 10^-45 to 3.4 x 10^38 // 32 bits
     // you can also use a small F instead of capital
@@ -195,7 +195,7 @@ If you try to do the reverse like in the example below you get an error. instead
 ```Java
 class Main {
   public static void main(String[] args) {
-    double number1 = 5;
+    double number1 = 5.0;
     int number2 = number1; // This will cause the error
     // implicit
     int number2 = (int)number1; // This won't cause an error
@@ -229,13 +229,14 @@ Notes:
 class Main {
   public static void main(String[] args) {
     // Precedence in priority order
-    // post fix x++ x--
-    // pre fix ++x --x
-    // multiplicative * / %
-    // add/subtract + -
-    // if precedence is equal then the equation solves left to right
+    // post fix: x++ x--
+    // pre fix: ++x --x
+    // multiplicative: * / %
+    // add/subtract: + -
+    // if two operators have equal precedence then it's evaluated from left to right
     // you can override precedence using parenthesis ()
     // parenthesis can be nested
+    // nested parenthesis are evaluated from inside to outer parenthesis
 
     int number1 = 12;
     int number2 = 6;
@@ -253,26 +254,11 @@ class Main {
     // division
     System.out.println(number1 / number2); // 2
 
+    System.out.println(13.0 / 5.0); // 2.6
+    System.out.println( 13 / 5 ); // 2
+
     // remainder (modulo/modulus)
     System.out.println(number1 % number2); // 0
-
-    // a widing conversion is a conversion of a smaller number to a larger and the compiler can handle that
-    // the compiler cannot handle narrowing conversions unless you use explicit casting
-    // 16 bit numbers will change to 32 bit in an implicit conversion
-
-    short byteval = (short) (byteval - longval) // here we convert a long to short
-    // we enclose the two values in parenthesis to convert the result at the end to short
-
-    // implicit
-    // numbers convert to largest decimal type. can't do the other way around
-    // when reassigning you can only cast decimal to int
-    // if mixing floating point the compiler prioritizes double
-    // if mixing float and integer then the compiler prioritizes the largest floating point
-    
-    // explicit
-    // if converting long to short. bits are dicarded from the value
-    // if converting float to int then the decimals get discarded
-    // if converting int to float u lose precision
 
   }
 
@@ -283,7 +269,27 @@ class Main {
     //or
     number +=5
     // you can use the shorthand way with other operators too
-    
+
+    combine an operation and assignment
+    - apply right side value to left side
+    - store result in variable on left side
+    5 basic math operations
+    += -= *= /= %=
+
+    int myValue = 50;
+    myValue -= 5;
+    System.out.println(myValue); //45
+
+    int myOtherValue = 100;
+    int val1 = 5;
+    int val2 = 10;
+    myOtherValue /= val1 * val2 // 50
+    - here the right side multiplication gets solved first
+    the equation then becomes:
+    100 / 50 which equals 2
+    myOtherValue /= 50
+
+    System.out.println(myOtherValue); //2 
   }
 }
 ```
@@ -356,6 +362,40 @@ class Main {
     // works the same with decrement
   }
 }
+```
+
+## Conversions
+
+```Java
+    // a widing conversion is a conversion of a smaller number to a larger and the compiler can 
+    handle that
+    // the compiler cannot handle narrowing conversions unless you use explicit casting
+    // 16 bit numbers will change to 32 bit in an implicit conversion
+
+    short byteval = (short) (byteval - longval) // here we convert a long to short
+    // we enclose the two values in parenthesis to convert the result at the end to short
+
+    // implicit
+    // widening conversions are performed automatically
+    /*
+      Mixed integer sizes
+        Uses largest integer in equation
+      Mixed floating point sizes
+        uses double
+      Mix integer and floating point
+        uses largest floating point in conversion
+     */
+    
+    // explicit
+    // can perform both widening or narrowing conversions
+    // be aware of potential side-effects
+    /*
+      Narrowing conversions
+        going from long to short - any bits that don't fit get thrown away
+      Floating point to integer
+        fractional portion is discarded like the decimals at the end of a number 1.454
+      integer to floating point
+        precision may be lost - a number like 100 could be 99.9
 ```
 
 ## Strings
