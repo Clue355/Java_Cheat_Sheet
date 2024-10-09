@@ -100,7 +100,8 @@ If you would like a variable value to be constant you can use the final modifier
 class Main {
   public static void main(String[] args) {
     final int someVariable = 10;
-    // cannot be changed once set 
+    // cannot be changed once set
+    // you have the option to initalize one you create a variable marked as final
   }
 }
 ```
@@ -122,6 +123,11 @@ class Main {
   public static void main(String[] args) {
     var num = 10;
     // the compiler will infer the type for you based on the value
+    // the variable must be initialized so the compiler can tell what the data type is
+    // the compiler will throw an error if you don't initailize
+
+    // the variable is statically typed.
+    // new values can be asigned but the variable type does not change unless it's casted
   }
 }
 ```
@@ -158,8 +164,8 @@ class Main {
 
     // characters
     char copyWriteSymbol = '\u00D9'; // accented U
-    stores a single unicode character
-    uses single quotes
+    // stores a single unicode character
+    // uses single quotes
 
     // Non-primitive Types
 
@@ -167,25 +173,6 @@ class Main {
     String name = "your name";
   }
 }
-```
-
-Type conversion can be implicit or explicit. 
-
-```Java
-class Main {
-  public static void main(String[] args) {
-    // explicit
-    int number1 = 5;
-    double number2 = number1;
-
-    System.out.println(number2)
-  }
-}
-```
-
-Ex output:
-```
-5.0
 ```
 
 ## Type Casting
@@ -305,17 +292,42 @@ class Main {
     // is equal to
     System.out.println(number1 == number2)
 
+    //ex:
+    5 == 5 //true
+    
+
     // is not equal to
     System.out.println(number1 != number2)
+
+    //ex:
+    4!=5 //true
+    'a' != 'c' //true
+    true != false //true
 
     // is greater than
     System.out.println(number1 > number2)
 
+    //ex:
+    5>4 // true
+    'c'>'a' // true because it uses the unicode numbers to compare
+
     // is less than
     System.out.println(number1 < number2)
 
+    //ex:
+    4<5 //true
+
+    'a' < 'c' //true
+
     //is greater than or equal to
     System.out.println(number1 >= number2)
+
+    //ex:
+    5>=4 //true
+    4>=4 // true
+
+    'c'>='a' //true
+    'c'>='a' //true
 
     // is less than or equal to
     System.out.println(number1 <= number2)
@@ -387,6 +399,21 @@ class Main {
      */
     
     // explicit
+    // use casting operators to make explicit conversions
+    (int)
+    (short)
+    (long)
+
+    ex:
+    short reslult1 = (short) longVal;
+
+    ex2:
+    short result2 = (short) (byteVal - longVal);
+
+    ex3:
+    float result3 = longVal - floatVal;
+    // long can't handle decimals so it's better to convert both to float which happens automatically
+
     // can perform both widening or narrowing conversions
     // be aware of potential side-effects
     /*
