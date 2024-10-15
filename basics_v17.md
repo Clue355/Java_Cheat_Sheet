@@ -663,6 +663,8 @@ class Main {
     System.out.printf("What operation do you want to perform");
     String oper = scanner.nextLine();
 
+    // runs the first condition that's true
+    // so depending on what the numbers are the first two conditions can be true
     if (oper.equals("sum")) {
       System.out.printf("%f + %f = %f", number1, number2, number1 + number2);
     } else if (oper.equals("sub")) {
@@ -675,6 +677,13 @@ class Main {
       System.out.println("sum")
     // java can execute the next line if there's no block, but only the next line
     // if there's mutliple lines of code the next one won't execute
+    // you can chain multiple conditions this way
+
+    for ex:
+    if(oper.equals("sum"))
+      system.out.printf() //add numbers added here
+    else if(oper.equals("sub"))
+      system.out.printf() // subtract numbers here
   
     scanner.close();
   }
@@ -708,6 +717,7 @@ class Main {
       
     }
     // only true if both sides resolve to true
+    // true & true
   }
 }
 ```
@@ -723,6 +733,7 @@ class Main {
       
     }
     // only true if one side or both resolves to true
+    // false | true  or  true | false  or  true | true
   }
 }
 ```
@@ -738,6 +749,8 @@ class Main {
       
     }
     // only true if one side resolves to true, but not both
+    // false ^ true  or  true ^ false
+    // true ^ true is not true
   }
 }
 ```
@@ -747,7 +760,7 @@ Negation operator
 ```Java
 class Main {
   public static void main(String[] args) {
-    int a = 20, b = 14, c = 5;
+    int a = 20, b = 25, c = 5;
     
     if ( !b < c) {
       System.out.println("true");
@@ -785,7 +798,7 @@ class Main {
       System.out.println("true");
     }
     // only executes right side if the left is false
-    // if right side is true then right side never executed
+    // if left side is true then right side never executed
     // only true if one of the sides is true
   }
 }
